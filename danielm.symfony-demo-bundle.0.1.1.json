@@ -1,12 +1,15 @@
 {
     "manifests": {
-        "danielm/symfony-bundle-demo": {
+        "danielm/symfony-demo-bundle": {
             "manifest": {
                 "bundles": {
                     "Danielm\\DemoBundle\\DanielmDemoBundle": [
                         "all"
                     ]
                 }
+            },
+            "copy-from-recipe": {
+                "config/": "%CONFIG_DIR%/"
             },
             "post-install-output": [
                 "  * It works!:",
@@ -41,8 +44,7 @@
                     "executable": false
                 }
             },
-            
-            "ref": "a26299ee7e19b37a0914477cd83015b68822c3b1"
+            "ref": "260a3aa1ef41e869c67ab10ffef11b82e753db38"
         }
     }
 }
