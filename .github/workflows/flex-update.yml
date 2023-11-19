@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
     flex-update:
         name: Update Flex endpoint
@@ -31,7 +35,7 @@ jobs:
                 name: Update Flex endpoint
                 run: |
                     mkdir .github/flex-endpoint
-                    git ls-tree HEAD */*/* | php .github/recipes-checker-main/run generate:flex-endpoint ${{ github.repository }} main flex/main .github/flex-endpoint
+                    git ls-tree HEAD */*/* | php .github/recipes-checker-main/run generate:flex-endpoint ${{ github.repository }} main flex/main .github/flex-endpoint --contrib
                     git switch flex/main
                     git rm --ignore-unmatch -q *.json
                     mv .github/flex-endpoint/*.json .
