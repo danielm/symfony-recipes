@@ -1,0 +1,50 @@
+{
+    "manifests": {
+        "danielm/symfony-demo-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Danielm\\DemoBundle\\DanielmDemoBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "DEMO_SAMPLE_ENV": "Some Random String"
+                },
+                "post-install-output": [
+                    "  * It works!:",
+                    "",
+                    "  * The Demo Flex Recipe and bundle have been installed!",
+                    "",
+                    "  * <fg=blue>Read</> the documentation at <comment>https://github.com/danielm/symfony-recipes/</>"
+                ]
+            },
+            "files": {
+                "config/packages/danielm_demo.yaml": {
+                    "contents": [
+                        "danielm_demo:",
+                        "    some_node:",
+                        "        required_number_value: 12",
+                        "        optional_value: 'uwu'",
+                        "        env_value: '%env(DEMO_SAMPLE_ENV)%'",
+                        "        #secret_value: '%DEMO_SAMPLE_SECRET%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/danielm_demo.yaml": {
+                    "contents": [
+                        "danielm_demo_bundle:",
+                        "    resource: \"@DanielmDemoBundle/config/routes.yaml\"",
+                        "    prefix: \"/demo\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "98cf770853ef83b2689efdde0d08049d3256516b"
+        }
+    }
+}
