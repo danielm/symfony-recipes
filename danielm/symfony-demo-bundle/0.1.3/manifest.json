@@ -1,0 +1,13 @@
+{
+    "bundles": {
+        "Danielm\\DemoBundle\\DanielmDemoBundle": [
+            "all"
+        ]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "DEMO_SAMPLE_ENV": "Some Random String"
+    }
+}
